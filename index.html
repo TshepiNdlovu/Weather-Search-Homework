@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Weather Search — Tshepi Ndlovu</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <title>My Weather Application</title>
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.3.5/dist/axios.min.js"></script>
   </head>
+
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-form" id="search-form">
+        <form id="search-form" class="search-form">
           <input
+            id="search-input"
+            class="search-input"
             type="search"
-            placeholder="Enter a city.."
+            placeholder="Enter a city..."
             required
-            id="search-form-input"
-            class="search-form-input"
           />
-          <input type="submit" value="Search" class="search-form-button" />
+          <button type="submit" class="search-button">Search</button>
         </form>
       </header>
+
       <main>
-        <div class="weather-app-data">
+        <div class="current-weather">
           <div>
-            <h1 class="weather-app-city" id="city">Loading...</h1>
-            <p class="weather-app-details">
-              <span id="time"></span>, <span id="description"></span><br />
-              Humidity: <strong id="humidity"></strong>, Wind:
-              <strong id="wind-speed"></strong>
+            <h1 id="current-city" class="current-city">—</h1>
+            <p class="current-details">
+              <span id="current-date">—</span>
+              <span id="current-description">—</span>
+              <br />
+              Humidity: <strong id="current-humidity">—</strong>, Wind:
+              <strong id="current-wind">—</strong>
             </p>
           </div>
-          <div class="weather-app-temperature-container">
-            <div id="icon"></div>
-            <div class="weather-app-temperature" id="temperature"></div>
-            <div class="weather-app-unit">°C</div>
+
+          <div class="current-temperature">
+            <div id="current-icon" class="current-temperature-icon">—</div>
+            <div>
+              <div class="current-temperature-value" id="current-temp">—</div>
+              <div class="current-temperature-unit">°C</div>
+            </div>
           </div>
         </div>
       </main>
 
       <footer>
-        This project was coded by
-        <a href="https://github.com/TshepiNdlovu" target="_blank"
-          >Tshepi Ndlovu</a
-        >, is
-        <a
-          href="https://github.com/TshepiNdlovu/Weather-Search-Homework"
-          target="_blank"
-          >open-sourced on GitHub</a
-        >
-        and
-        <a
-          href="https://6891270c960ba465d1d4a574--leafy-jelly-8a27ff.netlify.app"
-          target="_blank"
-          >hosted on Netlify</a
-        >
+        <p>
+          This project was coded by
+          <a href="https://github.com/TshepiNdlovu" target="_blank"
+            >Tshepi Ndlovu</a
+          >
+          and is
+          <a
+            href="https://github.com/TshepiNdlovu/Weather-Search-Homework"
+            target="_blank"
+            >on GitHub</a
+          >.
+          <span>
+            Hosted on Netlify:
+            <a
+              href="https://689b68fbd8b1fe27fae3d132--beautiful-fudge-a6d384.netlify.app"
+              id="netlify-link"
+              target="_blank"
+            >
+            </a>
+          </span>
+        </p>
       </footer>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
